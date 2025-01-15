@@ -33,3 +33,20 @@ def valid_move_function(grid, row, col, number):
                 return False
             
     return True
+
+# Backtracking
+def solve_function(grid, row, col):
+    if col == 9:
+        if row == 8:
+            return True 
+        row += 1
+        col = 0
+
+    if grid[row, col] > 0:
+        return solve_function(grid, row, col + 1)
+    
+    for number in range(1, 10):
+        if valid_move_function(grid, row, col, number):
+            grid[row][col] = number
+            if solve_function[grid, row, col + 1]:
+                return True
