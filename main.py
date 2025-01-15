@@ -54,3 +54,11 @@ grid = [
     [2, 8, 7, 4, 1, 9, 5, 3, 6],
     [3, 0, 5, 2, 8, 6, 1, 4, 9]
 ]
+
+if solve_function(grid, 0, 0):
+    for a in range(9):
+        for b in range(9):
+            print(grid[a][b], end=" ")
+        print("---------")
+else:
+    print("There is no solution for this Sudoku puzzle.")
