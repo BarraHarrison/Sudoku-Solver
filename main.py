@@ -15,3 +15,21 @@ grid = [
     [2, 8, 7, 4, 1, 9, 5, 3, 6],
     [3, 0, 5, 2, 8, 6, 1, 4, 9]
 ]
+
+def valid_move_function(grid, row, col, number):
+    for x in range(9):
+        if grid[row][x] == number:
+            return False
+        
+    for x in range(9):
+        if grid[x][col] == number:
+            return False
+        
+    corner_row = row - row % 3
+    corner_column = col - col % 3
+    for x in range(3):
+        for y in range(3):
+            if grid[corner_row + x][corner_column + y] == number:
+                return False
+            
+    return True
