@@ -30,7 +30,7 @@ def solve_function(grid, row, col):
         row += 1
         col = 0
 
-    if grid[row, col] > 0:
+    if grid[row][col] > 0:
         return solve_function(grid, row, col + 1)
     
     for number in range(1, 10):
