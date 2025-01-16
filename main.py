@@ -64,8 +64,11 @@ def remove_numbers(grid, num_holes=0):
             grid[row][col] = 0
             holes += 1
 
-def generate_sudoku():
-    pass
+def generate_sudoku(num_holes=40):
+    grid = [[0 for _ in range(9)] for _ in range(9)]
+    generate_complete_grid(grid)
+    remove_numbers(grid, num_holes)
+    return grid
 
 # Backtracking
 def solve_function(grid, row, col):
@@ -88,20 +91,14 @@ def solve_function(grid, row, col):
     
     return False
 
-grid = [
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],  
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
+if __name__ == "__main__":
+    puzzle = generate_sudoku(num_holes=40)
+    print("Generated Puzzle:")
+    for row in puzzle:
+        print(row)
 
 
-if solve_function(grid, 0, 0):
+if solve_function(puzzle, 0, 0):
     for a in range(9):
         if a % 3 == 0 and a != 0:
             print("-" * 21)
