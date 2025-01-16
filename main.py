@@ -4,13 +4,11 @@
 # The function explores all the possible choices from a given state
 # It 'backtracks' to the previous state if there is no solution
 
+import random
+
 def valid_move_function(grid, row, col, number):
     for x in range(9):
-        if grid[row][x] == number:
-            return False
-        
-    for x in range(9):
-        if grid[x][col] == number:
+        if grid[row][x] == number or grid[x][col] == number:
             return False
         
     corner_row = row - row % 3
