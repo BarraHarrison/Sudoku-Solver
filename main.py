@@ -58,8 +58,13 @@ grid = [
 
 if solve_function(grid, 0, 0):
     for a in range(9):
+        if a % 3 == 0 and a != 0:
+            print("-" * 21)
+
         for b in range(9):
+            if b % 3 == 0 and b != 0:
+                print("|", end=" ")
             print(grid[a][b], end=" ")
-        print("---------")
+        print()
 else:
     print("There is no solution for this Sudoku puzzle.")
