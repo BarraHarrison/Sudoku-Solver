@@ -56,7 +56,13 @@ def generate_complete_grid(grid, row=0, col=0):
     return False
 
 def remove_numbers(grid, num_holes=0):
-    pass
+    holes = 0
+    while holes < num_holes:
+        row = random.randint(0, 8)
+        col = random.randint(0, 8)
+        if grid[row][col] != 0:
+            grid[row][col] = 0
+            holes += 1
 
 def generate_sudoku():
     pass
