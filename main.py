@@ -99,6 +99,7 @@ if __name__ == "__main__":
 
 
 if solve_function(puzzle, 0, 0):
+    print("\nSolved Puzzle:")
     for a in range(9):
         if a % 3 == 0 and a != 0:
             print("-" * 21)
@@ -106,7 +107,7 @@ if solve_function(puzzle, 0, 0):
         for b in range(9):
             if b % 3 == 0 and b != 0:
                 print("|", end=" ")
-            print(grid[a][b], end=" ")
+            print(puzzle[a][b], end=" ")
         print()
 else:
     print("There is no solution for this Sudoku puzzle.")
