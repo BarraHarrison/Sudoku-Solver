@@ -36,7 +36,7 @@ def solve_function(grid, row, col):
     for number in range(1, 10):
         if valid_move_function(grid, row, col, number):
             grid[row][col] = number
-            if solve_function[grid, row, col + 1]:
+            if solve_function(grid, row, col + 1):
                 return True
             
         grid[row][col] = 0
