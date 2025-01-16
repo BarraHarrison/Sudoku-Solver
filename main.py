@@ -20,6 +20,15 @@ def valid_move_function(grid, row, col, number):
             
     return True
 
+def generate_complete_grid(grid, row=0, col=0):
+    pass
+
+def remove_numbers(grid, num_holes=0):
+    pass
+
+def generate_sudoku():
+    pass
+
 # Backtracking
 def solve_function(grid, row, col):
     if col == 9:
